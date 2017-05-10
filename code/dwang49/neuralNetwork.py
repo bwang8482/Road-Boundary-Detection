@@ -13,8 +13,6 @@ X = dataset[:,0:64].astype(float)
 Y = dataset[:,64].astype(int)
 Y = (Y+1)/2
 
-print Y
-
 # create model
 model = Sequential()
 model.add(Dense(256, input_dim=64, activation='relu'))
