@@ -37,7 +37,7 @@ def saveData():
         img_seg = slic(img, n_segments = 1000, compactness=8, convert2lab=True, min_size_factor=0.3)
         
         # Loop through all Segments
-        for label in range(np.amax(img_seg)):
+        for label in range(np.amax(img_seg)+1):
             
             # Display Message
             if label%100 == 0:
@@ -170,7 +170,8 @@ def loadFold(idx):
 #    1 for Load Data
 #    2 for Save Random Idexes
 #    3 for Save 5 Fold Data
-op = 4;
+#    4 for Validate Fold Data
+op = 0;
 
 # Save Data to File
 if op == 0:
