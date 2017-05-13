@@ -68,13 +68,13 @@ For numerical feature vector, the neural network is the best classifier with ove
 
 ![](./fig5.PNG)
 
-Figure 5. Neural Network Layout
+**Figure 5. Neural Network Layout**
 
 The neural network will use backpropagation to update weights for features and improve performance during the training process. We tried several parameters such as 512, 256, 128, and 64 nodes for hidden layers. Hidden layer with 256 nodes gets the highest accuracy, over 97%. 
 
 ![](./fig6.PNG)
 
-Figure 6. Training Accuracy & Loss for Neural Network
+**Figure 6. Training Accuracy & Loss for Neural Network**
 
 #### 2.5.2 Superpixel Feature Images
 We use deep learning convolutional neural network as a binary classifier for superpixel feature images. 
@@ -82,13 +82,13 @@ Due to the time constraints and computing power limitation, we use 2000 nonroad 
 
 ![](./fig7.PNG)
 
-Figure 7. Deep Learning Neural Network Layout
+**Figure 7. Deep Learning Neural Network Layout**
 
 For deep learning training, each epoch cost about 430 seconds. We terminate the training process when there is a harbinger of overfitting. According to the training and validation curves in figure 6, deep learning neural network can achieve accuracy over 90%. If we could have more time, we can train the neural network on larger dataset, adjust parameters for better performance, and modify neural network layouts. 
 
 ![](./fig8.PNG)
 
-Figure 8. Accuracy & Loss for Deep Learning
+**Figure 8. Accuracy & Loss for Deep Learning**
 
 ### 2.6 Testing
 For testing, we perform the similar procedure as before. First, we perform SLIC to each test image to segment the image into superpixels. Second, we extract the features as specified before, either into numerical feature vectors or superpixel feature images. Then, we use the trained model to classify each superpixel into road or nonroad category. Finally, we produce a labeled image and compare the labeled image with the ground truth label image for evaluation. We are using the area to measure the accuracy. 
@@ -98,7 +98,7 @@ For testing, we perform the similar procedure as before. First, we perform SLIC 
 
 ![](./fig9.PNG)
 
-Figure 9. Exemplary Visualized Detection Results
+**Figure 9. Exemplary Visualized Detection Results**
 
 ### 3.2 Evaluation
 
