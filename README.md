@@ -100,4 +100,20 @@ For testing, we perform the similar procedure as before. First, we perform SLIC 
 
 Figure 9. Exemplary Visualized Detection Results
 
+### 3.2 Evaluation
 
+The overall performance of the two models are all very good. The numerical feature vectors has an accuracy slightly higher than the superpixel feature images. This is unexpected because the superpixels contain more information than the vectors. However, the superpixels does not contain the geometric information about where the patch is inside the image and we are not sure how the black background will effect on the overall accuracy. Also, due to time limitations, we weren’t able to try more CNN structures and parameter settings, so we cannot conclude that the CNN performance could not be enhanced. 
+
+There are other things that worth mentioning here. The unbalanced dataset with about 70% of non-road regions and 30% of road regions may bias the accuracy higher than expected. Also, the dataset is relatively small including several pictures taken consecutively on the same road, which is not a problem for computer vision when the dataset was created, but might be a big issue for machine learning because it is basically including some training examples in the testing examples which will definitely increase the overall accuracy.
+
+## 4. Related Work
+
+There are a bunch of related work for this problem listed under the KITTI dataset, the top accuracies is around 97%, but they seems to be using a different criteria evaluating the accuracy and they used the information from camera calibration to transform to bird view, so we don’t think our result is comparable to their results.
+
+## 5. Future Work
+
+We have recognized that the SLIC will produce a systematic error around 1%, so we should find a better way to perform image segmentation that will produce a smaller systematic error. Also, we noticed that the boundaries we find may not be smooth and continuous due to poor segmentation. However, it is reasonable to assume that in the real world, the road boundaries are smooth and continuous. To improve the final result, we could apply some post-processing to smooth the boundaries of the road regions.
+
+## 6. Conclusion
+
+In conclusion, the two methods we developed, neural network for numerical feature vectors and convolutional neural network for superpixel feature images, are able to detect the road boundary with high accuracy around 97%.  There is a systematic error produced by the SLIC algorithm. Also, the high accuracy might be biased by the dataset that is not big enough and unbalanced. In general, we believe our model should be able to detect the urban road boundaries in images with high accuracy.
